@@ -169,7 +169,53 @@ section.hero {
         ul {
             display: flex;
             margin: 0;
+
+            a {
+                color: white;
+                padding: .5em 1.5rem;
+                font-size: .9rem;
+                
+                &:hover {
+                    background: none;
+                    text-decoration: underline;
+                }
+            }
         }
     }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+    .logo {
+        color: black;
+
+        span{
+            color: red;
+        }
+    }
+
+    section.hero {
+        color: black;
+        height: auto;   // grows or shrinks to fit whats inside
+        width: 40%;
+
+        svg.down-arrow {
+            stroke: black;
+            position: unset;    // removes any custom positioning. i think it hands it over to the auto (section)
+
+            path {
+                fill: black
+            }
+        }
+    }
+
+    
+
+
+
 
 }

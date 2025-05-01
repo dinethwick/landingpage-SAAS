@@ -136,4 +136,37 @@ section.hero .down-arrow path {
     display: flex;
     margin: 0;
   }
+  nav ul a {
+    color: white;
+    padding: 0.5em 1.5rem;
+    font-size: 0.9rem;
+  }
+  nav ul a:hover {
+    background: none;
+    text-decoration: underline;
+  }
+  .hero-img {
+    left: unset;
+    right: 0;
+    width: 50%;
+    height: 42em;
+  }
+  .logo {
+    color: black;
+  }
+  .logo span {
+    color: red;
+  }
+  section.hero {
+    color: black;
+    height: auto;
+    width: 40%;
+  }
+  section.hero svg.down-arrow {
+    stroke: black;
+    position: unset;
+  }
+  section.hero svg.down-arrow path {
+    fill: black;
+  }
 }/*# sourceMappingURL=style.css.map */
