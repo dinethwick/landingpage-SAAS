@@ -1,0 +1,129 @@
+-- <div class="hey"> </div>
+.hey {
+    background: blue;
+    font-size: 1rem;
+}
+
+-- <h1>hello</h1>
+h1 {
+    background: yellow;
+}
+
+-- <div class="content left"></div>
+.content{}
+.left{}
+see how you can reference two classes in an object
+by using a space
+
+-- <section class="hero"></section>
+section.hero {}
+
+*** class vs id
+class is used for css
+id is mostly used for javascript
+    .class {}
+    .container {}
+
+    #id {}
+    #el1 {}
+
+    tagname {}
+    h1 {}
+
+***<span></span> tag
+used for breaking an html tag/element into two pieces.
+for exxample if you have the logo 'ShoeBrand' and you want
+Shoe to be red, and Brand to be blue, you could enclose the second word
+in a span tag and add a class to that. 
+
+
+**SAAS
+a way of writing efficient css
+has features like nesting classes
+howto: rename file to name.scss
+       link the style.css file generated
+
+    body {
+        background-color: blue;
+
+        p {
+            color: white;
+            font-weight: bold;
+        }
+
+    }
+
+*** mobile-first css
+
+
+***
+absolute units
+
+relative units
+= 1.5em -> em is a relative unit
+it is relative to the font size of that specific element/parent element. (if font size is 16px, 1em = 16px)
+
+= 1rem -> rem is relative to the root element font size
+(root element being the html tag - set to 16px by default)
+
+= vh -> vh is viewport height (size of the screen)
+height: 100vh - take up whole height of screen
+
+= % -> percentage of the screen/window
+width: 50% - takes up half of the window 
+
+* use 
+    rem for font sizes
+    em for margin and padding
+
+*** fallback fonts
+font-family: 'Poppins', sans-serif;
+
+ to force load the poppins font, add the link to the google font 
+ in your html header (before the css file link)
+ choose only few sizes/weights to ensure fast loading
+
+
+*** defining image path in css intead of html page
+<div class="hero-img"></div>
+.hero-img {
+    position: absolute;
+    top: 0;
+    left:0;
+    // above are positioning values used with 'absolute' positioning
+    background: url('../images/redshoe.jpg');
+    background-size: cover;
+    background-position-x: 20%; 
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;        // moves it behind the rest of elements 
+}
+
+
+
+*** padding order
+/* Apply to all four sides */
+padding: 1em;
+
+/* top and bottom | left and right */
+padding: 5% 10%;
+
+/* top | left and right | bottom */
+padding: 1em 2em 2em;
+
+/* top | right | bottom | left */
+padding: 5px 1em 0 2em;
+
+*** SAAS: states
+a {
+    color: black;
+    padding: .75em 2em;
+    display:block;          //NOTE: padding on a link element wont work unless it display: block
+    width: 100%;
+
+    // adding a hover state
+    &:hover {
+        background: rgb(204, 201, 201)
+    }
+}

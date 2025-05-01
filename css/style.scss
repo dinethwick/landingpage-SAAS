@@ -1,0 +1,175 @@
+img {
+    width:100%;
+    // fits the width of the browser window
+}
+
+body {
+    margin: 1.5em;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left:0;
+    // above are positioning values used with 'absolute' positioning
+    background: url('../images/redshoe.jpg');
+    background-size: cover;
+    background-position-x: 20%; 
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;        // moves it behind the rest of elements 
+
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+nav {
+    position: fixed; // element will styay on screen even when scrolling (Sticky)
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 50%;     // you can also use percentage values for sizing. this occupies 50% of the window
+    z-index: 999; // very high value to make sure its sitting on top of the white background ; just making sure
+    text-transform: uppercase;
+    
+    //code to hide the close the side nav
+    transform: translateX(100%);    // by default, makes side nav dissapear. with js, we change it to 0 on click
+    transition: transform .5s ease-in-out; // this is to help the animation. 
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+
+        a {
+            color: black;
+            padding: .75em 2em;
+            display:block;          //NOTE: padding on a link element wont work unless it display: block
+            width: 100%;
+
+            // adding a hover state
+            &:hover {
+                background: rgb(204, 201, 201)
+
+            }
+
+
+        }
+    }
+
+    .close {
+        float: right;    // positon on right 
+        margin: 2em;
+        width: 2.5em
+    }
+
+
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    svg {
+        width: 2em;
+        margin-top: -.6em;
+        cursor: pointer;
+    }
+}
+
+h1{
+    font-size: 3rem;
+    margin-top: 2em;
+    line-height: 3.3rem;
+}
+
+.subhead {
+    font-size: 1.1rem;
+}
+
+section.hero {
+    color: white;
+    height: 90vh;
+
+    .down-arrow {
+        stroke: white;
+        position:absolute;
+        bottom: 2em;
+        width:1em;
+    
+        path{
+            fill:white;
+
+        }
+    }
+}
+
+.more-info {
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 11em;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 1.25 rem;
+    }
+
+    .desc {
+        line-height: 1.5rem;
+    }
+
+}
+
+// we make it responsive for all devices using a media query
+@media only screen and (min-width: 680px) {
+    // means once the window size gets to 680px+, only the following rulesets will apply
+    body {
+        margin: 1.5em 5em; // drastically increase side margin: 5em
+        font-family: 'Poppins', sans-serif;
+    }
+    
+}
+
+@media only screen and (min-width: 920px) {
+    // means once the window size gets to 920px+, only the following rulesets will apply
+    
+    .menu {
+        display: none;
+    }
+
+    // making the navbar (currently only a toggle sidebar) spread out into a website still top nav
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        svg.close {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            margin: 0;
+        }
+    }
+
+}
