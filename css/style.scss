@@ -99,12 +99,15 @@ h1{
 section.hero {
     color: white;
     height: 90vh;
+    animation: moveDown 1s ease-in-out forwards; //forwards makes it happen only once
+    opacity: 0;
 
     .down-arrow {
         stroke: white;
         position:absolute;
         bottom: 8em;   // element is pushed 8em up form the bottom of the container
         margin-bottom: 7em;
+        margin-top: 1em;
         width:1em;
         animation: moveArrow 1s alternate-reverse infinite;
     
@@ -290,5 +293,18 @@ section.hero {
     }
     to {
         transform: translateY(0px);
+    }
+}
+
+// hero section
+@keyframes moveDown {
+    from {
+        // from css clippy online tool
+        transform: translateY(-100px);
+        
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }

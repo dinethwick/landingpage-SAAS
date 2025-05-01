@@ -83,12 +83,15 @@ h1 {
 section.hero {
   color: white;
   height: 90vh;
+  animation: moveDown 1s ease-in-out forwards;
+  opacity: 0;
 }
 section.hero .down-arrow {
   stroke: white;
   position: absolute;
   bottom: 8em;
   margin-bottom: 7em;
+  margin-top: 1em;
   width: 1em;
   animation: moveArrow 1s alternate-reverse infinite;
 }
@@ -225,5 +228,14 @@ section.hero .down-arrow path {
   }
   to {
     transform: translateY(0px);
+  }
+}
+@keyframes moveDown {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */
